@@ -14,5 +14,15 @@
 #title {
   font-size: 20px;
   justify-content: center;
+  color: $black;
+  font: $headers-font;
+}
+
+#title:hover {
+  color: $darkgray
+}
+
+.logo-navbar {
+  text-decoration-line: none;
 
 }
