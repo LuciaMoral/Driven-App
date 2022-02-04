@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2022_02_03_181333) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.string "name"
-    t.index ["users_id"], name: "index_drivers_on_users_id"
+    t.index ["user_id"], name: "index_drivers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,5 +41,5 @@ ActiveRecord::Schema.define(version: 2022_02_03_181333) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "drivers", "users", column: "users_id"
+  add_foreign_key "drivers", "users"
 end
