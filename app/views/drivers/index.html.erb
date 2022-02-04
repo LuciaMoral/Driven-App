@@ -1,6 +1,7 @@
 <h2>Our Drivers</h2>
 
 <%= @drivers.each do |driver| %>
+  <%= driver.name %>
   <%= driver.photo %>
   <%= driver.license_type %>
 <% end %>
