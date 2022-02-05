@@ -12,7 +12,7 @@ Driver.destroy_all
 
 puts "create at least 3 drivers"
 
-file = URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643919468/ben-parker-OhKElOkQ3RE-unsplash_vdgspi.jpg')
+file = URI.open('https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80')
 john = Driver.new(
   name: "John Smith",
   license_type: "car",
@@ -33,7 +33,7 @@ charlotte = Driver.new(
   location: "Europe",
   price: 18
 )
-charlotte.photo.attache(io: file, filename: 'charlotte.jpg', content_type: 'image/jpg')
+charlotte.photo.attach(io: file, filename: 'charlotte.jpg', content_type: 'image/jpg')
 charlotte.save!
 
 file = URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643919468/joseph-gonzalez-iFgRcqHznqg-unsplash_xxvblm.jpg')
@@ -45,7 +45,7 @@ tobias = Driver.new(
   location: "Germany",
   price: 35
 )
-tobias.photo.attached(io: file, filename: 'tobias.jpg', content_type: 'image/jpg')
+tobias.photo.attach(io: file, filename: 'tobias.jpg', content_type: 'image/jpg')
 tobias.save!
 
 puts "3 new drivers created"
