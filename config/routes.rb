@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-
-  resources :drivers, only: [:index, :new, :create]
+  
+  resources :drivers, only: [:new, :create, :index, :show]
 
   get "users/:id/drivers", to: "users#drivers", as: :user_bookings
   resources :cars do
