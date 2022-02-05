@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_02_05_100634) do
+=======
+
+ActiveRecord::Schema.define(version: 2022_02_05_094202) do
+
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,9 +68,9 @@ ActiveRecord::Schema.define(version: 2022_02_05_100634) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id"
+    t.bigint "user_id"
     t.string "name"
-    t.index ["users_id"], name: "index_drivers_on_users_id"
+    t.index ["user_id"], name: "index_drivers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -75,13 +81,20 @@ ActiveRecord::Schema.define(version: 2022_02_05_100634) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+=======
+
+>>>>>>> master
   add_foreign_key "bookings", "drivers"
   add_foreign_key "bookings", "users"
   add_foreign_key "drivers", "users", column: "users_id"
+
 end

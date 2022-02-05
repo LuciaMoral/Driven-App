@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-8">
+  <div class="card-trip">
+  <div>
+  <h3>Name: <%= @driver.name %></h3>
+  <p>License type: <%= @driver.license_type %></p>
+  <p>Years of driving: <%= @driver.years_driving %></p>
+  <p>Transmission: <%= @driver.transmission %></p>
+  <p>Availability: <%= @driver.availability %></p>
+  <p>Location: <%= @driver.location %></p>
+  <p>Price: <%= @driver.price %>$</p>
+  </div>
+</div>
+
+<!--<h4><strong>Book this driver <%= @driver.name %></strong></h4>-->
+<p><%= @driver.price %> $ per day</p>
+<%#= simple_form_for [@driver, @booking] do |f| %>
+<%#= f.button :submit, class: "btn btn-success" %>
+<button type="button" class="btn btn-success">Book this driver</button>
+</div>
+</div>
+</div>
