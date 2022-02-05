@@ -12,7 +12,7 @@ Driver.destroy_all
 
 puts "create at least 3 drivers"
 
-file.URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643919468/ben-parker-OhKElOkQ3RE-unsplash_vdgspi.jpg')
+file = URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643919468/ben-parker-OhKElOkQ3RE-unsplash_vdgspi.jpg')
 john = Driver.new(
   name: "John Smith",
   license_type: "car",
@@ -24,7 +24,7 @@ john = Driver.new(
 john.photo.attach(io: file, filename: 'john.jpg', content_type: 'image/jpg')
 john.save!
 
-file.URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643981071/edward-cisneros-_H6wpor9mjs-unsplash_rvm7kb.jpg')
+file = URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643981071/edward-cisneros-_H6wpor9mjs-unsplash_rvm7kb.jpg')
 charlotte = Driver.new(
   name: "Charlotte Milliken",
   license_type: "car",
@@ -36,7 +36,7 @@ charlotte = Driver.new(
 charlotte.photo.attache(io: file, filename: 'charlotte.jpg', content_type: 'image/jpg')
 charlotte.save!
 
-file.URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643919468/joseph-gonzalez-iFgRcqHznqg-unsplash_xxvblm.jpg')
+file = URI.open('https://res.cloudinary.com/dtwo70uhi/image/upload/v1643919468/joseph-gonzalez-iFgRcqHznqg-unsplash_xxvblm.jpg')
 tobias = Driver.new(
   name: "Tobias Weber",
   license_type: "HGV",
