@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :drivers, only: [:index, :new, :create, :show]
 
   get "users/:id/drivers", to: "users#drivers", as: :user_bookings
-  resources :cars do
+  resources :drivers do
     resources :bookings, only: [:new, :create]
     # changed it from universal resources to only new and create as needed
   end
