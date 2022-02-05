@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
+
 ActiveRecord::Schema.define(version: 2022_02_05_100634) do
-=======
 
-ActiveRecord::Schema.define(version: 2022_02_05_094202) do
-
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,14 +84,12 @@ ActiveRecord::Schema.define(version: 2022_02_05_094202) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
+
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-=======
 
->>>>>>> master
   add_foreign_key "bookings", "drivers"
   add_foreign_key "bookings", "users"
-  add_foreign_key "drivers", "users", column: "users_id"
-
+  add_foreign_key "drivers", "users"
 end
