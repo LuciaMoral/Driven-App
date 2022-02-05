@@ -10,21 +10,15 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%if user_signed_in? %>
-        <% unless params[:controller] == "pages" && params[:action] == "home"  %>
+        <%#if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "View drivers", drivers_path, class: "nav-link" %>
-          </li>
-          <% end %>
-          <li class="nav-item active">
-            <%= link_to "Book a driver", new_car_booking , class: "nav-link" %>
+            <%#= link_to "View drivers", offers_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://images.unsplash.com/photo-1600267185393-e158a98703de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", edit_user_registration_path(current_user), class: "dropdown-item" %>
-              <%= link_to "Manage my bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% #else %>
