@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :drivers, only: [:index, :new, :create]
+  resources :drivers, only: [:index, :show]
 
   get "users/:id/drivers", to: "users#drivers", as: :user_bookings
   resources :cars do
