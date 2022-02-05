@@ -1,6 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<% if user_signed_in? %>
-  <%= current_user %>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(https://images.unsplash.com/photo-1518783211485-10fd3bfb2ce2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1932&q=80);">
+  <div class="text-center" class="container">
+    <h1>DRIVEN</h1>
+      <div class="typewriter">
+      <p> Want your car driven from anywhere, to anywhere?</p>
+      </div>
+  <br>
+  <br>
+  <%= link_to "Let's go", drivers_path, class: "btn btn-outline-light btn-lg"%>
+  </div>
+</div>
