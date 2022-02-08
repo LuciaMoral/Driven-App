@@ -1,19 +1,16 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = Booking.all
-  end
-
-  def show
-    @booking = Booking.find(params[:id])
-  end
+  # def show
+  # @booking = Booking.find(params[:id])
+  # end
 
   def new
+    set_driver
     @booking = Booking.new
-    @driver = set_driver
   end
 
   def create
     @booking = Booking.new(booking_params)
+    set_driver
     @booking.driver = @driver
     @user = current_user
     @booking.user = @user
