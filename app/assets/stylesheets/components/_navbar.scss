@@ -27,7 +27,8 @@
 }
 
 #title:hover {
-  color: $darkgray
+  color: $darkgray;
+  transition: 0.4s ease;
 }
 
 .logo-navbar {
@@ -35,7 +36,12 @@
 
 }
 
-.dropdown-style {
-  left: -130px !important;
-  min-width: 33rem !important;
+.driver {
+  margin: 0px -6px;
+  font-weight: bold;
+}
+
+.driver:hover {
+  color: $darkgray!important;
+  transition: 0.4s ease!important;
 }
