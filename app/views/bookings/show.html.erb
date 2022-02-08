@@ -6,3 +6,12 @@
     </div>
   </div>
 </div>
+<div class="container btn-container mt-2">
+    <div class="d-flex justify-content-around">
+      <div class="btn-yellow mr-2" style="width: 100%;">
+        <%= link_to bookings_path(to_booking: @booking) do %>
+          <p class="mb-0 text-left"><i class="fas fa-directions"></i> Edit Booking</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
