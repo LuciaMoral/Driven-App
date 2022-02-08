@@ -32,6 +32,6 @@ class DriversController < ApplicationController
 
   def strong_params
     params.require(:driver)
-          .permit(:license_type, :years_driving, :transmission)
+          .permit(:name, :license_type, :years_driving, :transmission, :photo)
   end
 end
