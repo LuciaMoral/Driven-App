@@ -28,6 +28,8 @@ class DriversController < ApplicationController
     redirect_to user_path(@driver.user.id)
   end
 
+  @driver = Driver.search_by_location_and_transmission
+
   private
 
   def strong_params
