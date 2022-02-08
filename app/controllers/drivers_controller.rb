@@ -3,6 +3,10 @@ class DriversController < ApplicationController
     @drivers = Driver.all
   end
 
+  def show
+    @driver = Driver.find(params[:id])
+  end
+
   def new
     @driver = Driver.new
   end

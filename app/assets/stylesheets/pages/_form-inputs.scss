@@ -1,0 +1,30 @@
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+
+.btn {
+  color: rgb(1, 31, 70);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: rgb(23, 20, 159);
+  width: 100%;
+  }
+
+.whole-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+
+}

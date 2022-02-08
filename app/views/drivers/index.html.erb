@@ -1,6 +1,17 @@
-<h2>Our Drivers</h2>
+<div class="container">
 
-<%= @drivers.each do |driver| %>
-  <%= driver.photo %>
-  <%= driver.license_type %>
-<% end %>
+  <h2>Our Drivers</h2>
+  <div class="cards">
+    <% @drivers.each do |driver| %>
+      <div class="card-driver">
+      <%= cl_image_tag driver.photo.key, height: 200, width: 200, crop: :fill %>
+        <div class="card-details">
+            <h2><%= driver.name %></h2>
+            <p>license type:  <%= driver.license_type %></p>
+            <p><strong> <%= driver.years_driving%> years of experience</strong></p>
+            <%= link_to "Read more", driver_path(driver), class: 'btn btn-secondary' %>
+          </div>
+      </div>
+   <% end %>
+  </div>
+</div>

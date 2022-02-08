@@ -1,0 +1,57 @@
+<div class="container mt-5">
+  <h1 class="headers">Your bookings</h1>
+</div>
+<div class="container mt-4 border-bottom border-warning border-10 d-flex justify-content-start">
+  <button class="btn btn-bookings booking-tab" data-target="upcoming-bookings">Upcoming</button>
+  <button class="btn btn-bookings booking-tab" data-target="past-bookings">Past</button>
+</div>
+<div class="container" style="margin-top: 24px;">
+  <div class="bookings-ul active" id="upcoming-bookings">
+    <ul class="user-bookings-ul">
+      <% @upcoming_bookings.each do |your_booking| %>
+        <li class="user-bookings-li">
+          <div class="user-bookings-box-1">
+            <div class="user-bookings-box-2">
+              <div class="user-bookings-box-3">
+                <%= cl_image_tag your_booking.driver.photos[0].key, class:"user-bookings-img-box" %>
+              </div>
+              <div>
+                <div class="user-bookings-date-box">
+                <div><%= your_booking.start_date.strftime("%b %d, %Y") %> - <%= your_booking.end_date.strftime("%b %d, %Y") %></div>
+                </div>
+                <div class="user-bookings-drivername-box">
+                  <h4><%= your_booking.driver %> - <%= your_booking.driver %></h4>
+                  <!-- <h6  class="edit-buttton">Edit</h6>
+                  <h6 class="edit-buttton">Delete</h6> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="bookings-ul" id="past-bookings">
+    <ul class="user-bookings-ul">
+      <% @past_bookings.each do |your_booking| %>
+        <li class="user-bookings-li">
+          <div class="user-bookings-box-1">
+            <div class="user-bookings-box-2">
+              <div class="user-bookings-box-3">
+                <%= cl_image_tag your_booking.driver.photos[0].key, class:"user-bookings-img-box" %>
+              </div>
+              <div>
+                <div class="user-bookings-date-box">
+                <div><%= your_booking.start_date.strftime("%b %d, %Y") %> - <%= your_booking.end_date.strftime("%b %d, %Y") %></div>
+                </div>
+                <div class="user-bookings-carname-box">
+                  <h4><%= your_booking.driver %> - <%= your_booking.driver %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
