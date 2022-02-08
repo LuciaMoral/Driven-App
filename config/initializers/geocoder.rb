@@ -1,5 +1,5 @@
 Geocoder.configure(
-  units: :km
+  units: :km,
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
   # lookup: :nominatim,         # name of geocoding service (symbol)
@@ -8,7 +8,7 @@ Geocoder.configure(
   # use_https: false,           # use HTTPS for lookup requests? (if supported)
   # http_proxy: nil,            # HTTP proxy server (user:pass@host:port)
   # https_proxy: nil,           # HTTPS proxy server (user:pass@host:port)
-  # api_key: ENV['MapBox_API_Key']              # API key for geocoding service
+  # MAPBOX_API_KEY: ENV['MAPBOX_API_KEY']           # API key for geocoding service
   # cache: nil,                 # cache object (must respond to #[], #[]=, and #del)
   # cache_prefix: 'geocoder:',  # DEPRECATED, please use cache_options[:prefix] instead
 

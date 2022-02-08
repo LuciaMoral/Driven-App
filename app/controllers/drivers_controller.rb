@@ -1,8 +1,14 @@
 class DriversController < ApplicationController
   def index
     @drivers = Driver.all
+    @markers = @drivers.geocoded.map do |driver|
+      {
+        lat: driver.latitude,
+        lng: driver.longitude
+      }
+    end
   end
-  
+
   def show
     @driver = Driver.find(params[:id])
   end
