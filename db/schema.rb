@@ -62,9 +62,9 @@ ActiveRecord::Schema.define(version: 2022_02_05_100634) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
+    t.bigint "users_id"
     t.string "name"
-    t.index ["user_id"], name: "index_drivers_on_user_id"
+    t.index ["users_id"], name: "index_drivers_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -85,5 +85,5 @@ ActiveRecord::Schema.define(version: 2022_02_05_100634) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "drivers"
   add_foreign_key "bookings", "users"
-  add_foreign_key "drivers", "users"
+  add_foreign_key "drivers", "users", column: "users_id"
 end
