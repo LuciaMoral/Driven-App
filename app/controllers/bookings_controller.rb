@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
 
     if @booking.update(booking_params)
-      redirect_to user_path(current_user)
+      redirect_to @booking
     else
       render :new
     end
