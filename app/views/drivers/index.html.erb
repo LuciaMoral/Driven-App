@@ -9,7 +9,7 @@
             <h2><%= driver.name %></h2>
             <p>license type:  <%= driver.license_type %></p>
             <p><strong> <%= driver.years_driving%> years of experience</strong></p>
-            <%= link_to "Read more", driver_path(@drivers), class: 'btn btn-secondary' %>
+            <%= link_to "Read more", driver_path(driver), class: 'btn btn-secondary' %>
           </div>
       </div>
    <% end %>
