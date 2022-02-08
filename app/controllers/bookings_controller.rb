@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
-  # def show
-  # @booking = Booking.find(params[:id])
-  # end
+  def show
+    @booking = Booking.find(params[:id])
+  end
 
   def new
     set_driver
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking.user = @user
     if @booking.save
-      redirect_to user_path(current_user)
+      redirect_to @booking
     else
       render :new
     end
@@ -50,6 +50,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
