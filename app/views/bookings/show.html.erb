@@ -1,3 +1,17 @@
-<h1>H1</h1>
-
-<%= @booking.driver.name %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1><strong>Congratulations</strong>, you have successfully booked <%= @booking.driver.name %> as your driver.</h1>
+        <h3> Your car will be driven <strong> wherever </strong> safely. </h3>
+    </div>
+  </div>
+</div>
+<div class="container btn-container mt-2">
+    <div class="d-flex justify-content-around">
+      <div class="btn-yellow mr-2" style="width: 100%;">
+        <%= link_to edit_booking_path(@booking) do %>
+          <p class="mb-0 text-left"><i class="fas fa-directions"></i> Edit Booking</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
