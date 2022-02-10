@@ -8,6 +8,7 @@
 
 require "open-uri"
 puts "clean DB"
+Booking.destroy_all
 Driver.destroy_all
 
 puts "create at least 3 drivers"
