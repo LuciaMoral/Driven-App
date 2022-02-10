@@ -4,6 +4,16 @@
   grid-gap: 16px;
 }
 
+.booking-form {
+  margin-left: 40px;
+  margin-top: 200px;
+  padding: 10px;
+
+}
+
+.show-form {
+  background-color: $light-gray;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {

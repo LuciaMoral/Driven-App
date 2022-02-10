@@ -16,6 +16,7 @@ class DriversController < ApplicationController
 # resave it
   def show
     @driver = Driver.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -24,8 +25,7 @@ class DriversController < ApplicationController
 
   def create
     @driver = Driver.new(strong_params)
-    @driver.user = current_user
-
+    #@driver.user = current_user
     if @driver.save
       redirect_to driver_path(@driver)
     else
@@ -34,15 +34,16 @@ class DriversController < ApplicationController
   end
 
   def destroy
-    @driver = Driver.find params [:id]
+    @driver = Driver.find(params[:id])
     @driver.destroy
-    redirect_to user_path(@driver.user.id)
+    redirect_to drivers_path, notice: "Driver was successfully deleted"
+    # redirect_to user_path(@driver.user.id)
   end
 
   private
 
   def strong_params
     params.require(:driver)
-          .permit(:name, :license_type, :years_driving, :transmission, :photo)
+          .permit(:name, :license_type, :years_driving, :transmission, :location, :photo)
   end
 end

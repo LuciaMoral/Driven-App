@@ -1,13 +1,16 @@
 
 <div class="container">
-
+  <div class="row justify-content-center">
+    <div class="col-6">
   <%= simple_form_for [@user, @driver] do |f| %>
-
-    <%#= f.input :photo_url %>
+    <%= f.input :name %>
     <%= f.input :license_type %>
     <%= f.input :years_driving %>
     <%= f.input :transmission %>
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= f.input :location %>
+    <%= f.input :photo %>
+    <%= f.submit "Submit as a driver", class: "btn btn-primary btn-lg btn-block" %>
   <% end %>
-
 </div>
+  </div>
+    </div>
