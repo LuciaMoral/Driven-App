@@ -18,7 +18,7 @@
 <p><%= @driver.price %> $ per day</p>
 <%#= simple_form_for [@driver, @booking] do |f| %>
 <%#= f.button :submit, class: "btn btn-success" %>
-<button type="button" class="btn btn-success">Book this driver</button>
+<%=link_to "Book this driver", new_driver_booking_path(@driver), class:"btn btn-success"%>
 </div>
 </div>
 </div>
