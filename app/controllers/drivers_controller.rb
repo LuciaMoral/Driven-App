@@ -5,8 +5,15 @@ class DriversController < ApplicationController
     else
       @drivers = Driver.all
     end
+    @markers = @drivers.geocoded.map do |driver|
+      {
+        lat: driver.latitude,
+        lng: driver.longitude,
+        info_window: render_to_string(partial: "/drivers/map_window", locals: { driver: driver })
+      }
+    end
   end
-
+# resave it
   def show
     @driver = Driver.find(params[:id])
   end

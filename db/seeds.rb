@@ -18,7 +18,7 @@ john = Driver.new(
   license_type: "car",
   years_driving: 10,
   transmission: "manual",
-  location: "Europe",
+  location: "117 Junction Road, London, N19 5PX",
   price: 20
 )
 john.photo.attach(io: file, filename: 'john.jpg', content_type: 'image/jpg')
@@ -30,7 +30,7 @@ charlotte = Driver.new(
   license_type: "car",
   years_driving: 17,
   transmission: "automatic",
-  location: "Europe",
+  location: "'16 Villa Gaudelet, Paris",
   price: 18
 )
 charlotte.photo.attach(io: file, filename: 'charlotte.jpg', content_type: 'image/jpg')
@@ -42,7 +42,7 @@ tobias = Driver.new(
   license_type: "HGV",
   years_driving: 25,
   transmission: "manual",
-  location: "Germany",
+  location: "9 Emser Strasse, Berlin, 12501",
   price: 35
 )
 tobias.photo.attach(io: file, filename: 'tobias.jpg', content_type: 'image/jpg')

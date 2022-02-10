@@ -66,7 +66,9 @@ ActiveRecord::Schema.define(version: 2022_02_08_182226) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.string "name"
-    t.index ["user_id"], name: "index_drivers_on_user_id"
+    t.float "latitude"
+    t.float "longitude"
+    t.index ["users_id"], name: "index_drivers_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
