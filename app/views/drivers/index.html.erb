@@ -1,7 +1,7 @@
 <div class="container">
 
   <h2>Our Drivers</h2>
-  <div class="cards">
+  <div class="cards mb-5">
     <% @drivers.each do |driver| %>
       <div class="card-driver">
       <%= cl_image_tag driver.photo.key, height: 200, width: 200, crop: :fill %>
@@ -14,4 +14,11 @@
       </div>
    <% end %>
   </div>
+
+
+    <div id="map"
+        style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 </div>

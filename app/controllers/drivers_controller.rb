@@ -1,6 +1,13 @@
 class DriversController < ApplicationController
   def index
     @drivers = Driver.all
+    @markers = @drivers.geocoded.map do |driver|
+      {
+        lat: driver.latitude,
+        lng: driver.longitude,
+        info_window: render_to_string(partial: "/drivers/map_window", locals: { driver: driver })
+      }
+    end
   end
 
   def show
