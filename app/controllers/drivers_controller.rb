@@ -5,6 +5,7 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -22,9 +23,10 @@ class DriversController < ApplicationController
   end
 
   def destroy
-    @driver = Driver.find params [:id]
+    @driver = Driver.find(params[:id])
     @driver.destroy
-    redirect_to user_path(@driver.user.id)
+    redirect_to drivers_path, notice: "Driver was successfully deleted"
+    # redirect_to user_path(@driver.user.id)
   end
 
   private
