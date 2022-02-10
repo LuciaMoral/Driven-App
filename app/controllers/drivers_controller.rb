@@ -1,6 +1,10 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all
+    if params[:query]
+      @drivers = Driver.search_by_location(params[:query])
+    else
+      @drivers = Driver.all
+    end
     @markers = @drivers.geocoded.map do |driver|
       {
         lat: driver.latitude,
@@ -9,7 +13,7 @@ class DriversController < ApplicationController
       }
     end
   end
-
+# resave it
   def show
     @driver = Driver.find(params[:id])
   end

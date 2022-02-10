@@ -1,6 +1,15 @@
 <div class="container">
 
   <h2>Our Drivers</h2>
+  <div class= 'search-bar-index'>
+    <%= form_tag drivers_path, method: :get do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: 'form control form_search', id: 'form-placeholder',
+      placeholder:'search location'%>
+      <%= submit_tag 'search', class: 'btn btn-primary'%>
+    <% end %>
+  </div>
   <div class="cards mb-5">
     <% @drivers.each do |driver| %>
       <div class="card-driver">
