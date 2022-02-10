@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2022_02_08_182226) do
     t.string "name"
     t.float "latitude"
     t.float "longitude"
-    t.index ["users_id"], name: "index_drivers_on_users_id"
+    t.index ["user_id"], name: "index_drivers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
