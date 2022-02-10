@@ -1,6 +1,10 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all
+    if params[:query]
+      @drivers = Driver.search_by_location(params[:query])
+    else
+      @drivers = Driver.all
+    end
   end
 
   def show
@@ -27,8 +31,6 @@ class DriversController < ApplicationController
     @driver.destroy
     redirect_to user_path(@driver.user.id)
   end
-
-  @driver = Driver.search_by_location_and_transmission
 
   private
 
