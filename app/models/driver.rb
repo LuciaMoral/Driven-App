@@ -4,6 +4,7 @@ class Driver < ApplicationRecord
   validates :name, :license_type, :years_driving, :transmission, :location, presence: true
   has_one_attached :photo
   has_many :bookings
+  belongs_to :user
 
   # [...]
   include PgSearch::Model
