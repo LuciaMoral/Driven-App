@@ -29,6 +29,18 @@ male_pictures = [
   'https://res.cloudinary.com/dtwo70uhi/image/upload/v1644651375/ben-parker-OhKElOkQ3RE-unsplash_npnqtl.jpg'
 ]
 
+location = [
+  '1 Kingsland Rd, London',
+  '2 Kingsland Rd, London',
+  '25 Kingsland Rd, London',
+  '56 Kingsland Rd, London',
+  'Shoreditch',
+  'Brixton',
+  '18 Newtons Yard',
+  'Kings Road, London',
+  'Sloane Square, London',
+  'Hammersmith'
+]
 female_pictures.each do |female_picture_url|
   file = URI.open(female_picture_url)
   female_driver = Driver.new(
@@ -36,7 +48,7 @@ female_pictures.each do |female_picture_url|
     license_type: ["A", "B", "C"].sample,
     years_driving: rand(1..30),
     transmission: ["auto", "manual"].sample,
-    location: ["London", "Shoreditch", "Brixton", "Hampstead"].sample,
+    location: location.sample,
     price: rand(10..50)
   )
   female_driver.photo.attach(io: file, filename: female_picture_url, content_type: 'image/jpg')
@@ -50,7 +62,7 @@ male_pictures.each do |male_picture_url|
     license_type: ["A", "B", "C"].sample,
     years_driving: rand(1..30),
     transmission: ["auto", "manual"].sample,
-    location: ["London", "Shoreditch", "Brixton", "Hampstead"].sample,
+    location: location.sample,
     price: rand(10..50)
   )
   male_driver.photo.attach(io: file, filename: male_picture_url, content_type: 'image/jpg')
