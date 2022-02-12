@@ -32,9 +32,9 @@ pictures.each do |picture_url|
   driver = Driver.new(
     name: Faker::Name.name,
     license_type: ["A", "B", "C"].sample,
-    years_driving: rand(1..50),
+    years_driving: rand(1..8),
     transmission: ["auto", "manual"].sample,
-    location: Faker::Address.full_address,
+    location: ['Oslo','skøyen', 'Majorstuen', 'brugata', 'lysaker', 'grønnland'].sample,
     price: rand(10..50)
   )
   driver.photo.attach(io: file, filename: picture_url, content_type: 'image/jpg')
