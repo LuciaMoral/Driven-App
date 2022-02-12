@@ -25,8 +25,8 @@ class DriversController < ApplicationController
 
   def create
     @driver = Driver.new(strong_params)
-    #@driver.user = current_user
-    if @driver.save
+    @driver.user = current_user
+    if @driver.save!
       redirect_to driver_path(@driver)
     else
       render :new
@@ -44,6 +44,6 @@ class DriversController < ApplicationController
 
   def strong_params
     params.require(:driver)
-          .permit(:name, :license_type, :years_driving, :transmission, :location, :photo)
+          .permit(:name, :license_type, :years_driving, :transmission, :price, :location, :photo)
   end
 end
