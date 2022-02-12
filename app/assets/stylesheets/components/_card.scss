@@ -2,17 +2,20 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  border: none;
 }
 
 .booking-form {
   margin-left: 40px;
   margin-top: 200px;
   padding: 10px;
+  border: none;
 
 }
 
 .show-form {
   background-color: $light-gray;
+  border: none;
 }
 
 // Smallest device
