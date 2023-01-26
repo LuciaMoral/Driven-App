@@ -48,7 +48,6 @@ female_pictures.each do |female_picture_url|
     license_type: ["A", "B", "C"].sample,
     years_driving: rand(1..8),
     transmission: ["auto", "manual"].sample,
-    transmission: ["auto", "manual"].sample,
     location: location.sample,
     price: rand(10..50)
   )
