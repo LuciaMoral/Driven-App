@@ -2,24 +2,19 @@
   <div class="card show-form">
     <div class="d-flex justify-content-center" style= "margin: 80px" style="width: 30rem;">
       <div class="card" style="width: 30rem;">
-          <% if driver.photo.attached? %>
-            <%= cl_image_tag driver.photo.key, height: 400, width: 478, crop: :fill, alt:"Generic placeholder image" %>
-          <% else %>
-            <% false %>
-          <% end %>
+        <%= cl_image_tag @driver.photo.key, height: 400, width: 478, crop: :fill, alt:"Generic placeholder image" %>
           <div class="card-body">
-            <h3 class="card-title"><%= @driver.name %></h3>
-            <div class="card-text">
-              <p>License type: <%= @driver.license_type %></p>
-              <p>Years of driving: <%= @driver.years_driving %></p>
-              <p>Transmission: <%= @driver.transmission %></p>
-              <p>Availability: <%= @driver.availability %></p>
-              <p>Location: <%= @driver.location %></p>
-              <p>Price: <%= @driver.price %>$ per day</p>
-            </div>
-          </div>
+          <h3 class="card-title"><%= @driver.name %></h3>
+          <div class="card-text">
+          <p>License type: <%= @driver.license_type %></p>
+          <p>Years of driving: <%= @driver.years_driving %></p>
+          <p>Transmission: <%= @driver.transmission %></p>
+          <p>Availability: <%= @driver.availability %></p>
+          <p>Location: <%= @driver.location %></p>
+          <p>Price: <%= @driver.price %>$ per day</p>
       </div>
     </div>
+  </div>
   <div class="col-sm-6">
     <div class="card booking-form">
       <h1>Add a booking for <%= @driver.name %></h1>
